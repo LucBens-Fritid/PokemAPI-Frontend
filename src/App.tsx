@@ -11,6 +11,7 @@ function App() {
   const [pokeName, setPokeName] = useState('');
   const [pokeData, setPokeData] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
 
   const baseUrl = 'https://localhost:7050/api/pokemon';
   const url = `${baseUrl}/${pokeName}`;
@@ -28,6 +29,7 @@ function App() {
       console.error('Error fetching users:', error);
     } finally {
       setLoading(false);
+      setSearched(true);
     }
   };
 
@@ -37,13 +39,19 @@ function App() {
         <div className="content-container">
           <div className="content">
             <div className="title">
-              <h2>Pokédex</h2>
+              <h2 className="title">Pokédex</h2>
             </div>
 
             <>
               <div>
                 <p style={{ color: 'black' }}>
-                  {loading ? 'Loading...' : pokeData ? `${pokeData.name}` : 'No pokemon found'}
+                  {searched
+                    ? loading
+                      ? 'Loading...'
+                      : pokeData
+                      ? `${pokeData.name}`
+                      : 'No pokemon found'
+                    : 'Search for a Pokemon'}
                 </p>
               </div>
               <div>

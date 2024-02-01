@@ -4,32 +4,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 20px 0px 20px;
 }
 
 .container {
   border-radius: 5px;
-  width: 70%;
-  height: 80%;
   background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: auto;
+  padding: 20px;
 }
 
 .content-container {
-  width: 90%;
-  height: 90%;
-  background-color: white;
+  background-color: #f1f1f1;
   display: flex;
   justify-content: center;
   border-radius: 5px;
   overflow: auto;
 
   .content {
-    display: flex;
     flex-direction: column;
     align-items: center;
+    display: flex;
     justify-content: center;
     padding: 20px;
     flex: 1 1 auto;
@@ -38,7 +36,7 @@
       color: black;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 700px) {
       justify-content: unset;
     }
   }
@@ -60,6 +58,10 @@
     gap: 10px;
     width: 100%;
 
+    @media (max-width: 700px) {
+      padding: 0px 0px 10px 0px;
+    }
+
     button {
       display: flex;
       justify-content: center;
@@ -69,6 +71,12 @@
       padding: 5px;
       margin: 0;
       border-radius: 5px;
+      background-color: rgb(60, 60, 60);
+      border: 1px solid rgb(187, 186, 186);
+
+      &:hover {
+        background-color: rgb(127, 124, 124);
+      }
 
       p {
         margin: 0;
@@ -82,6 +90,9 @@
       color: black;
       padding: 5px;
       border-radius: 5px;
+    }
+    input:focus {
+      outline: 1px solid rgb(177, 177, 177);
     }
   }
 }
