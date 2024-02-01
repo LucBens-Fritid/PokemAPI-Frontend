@@ -4,8 +4,10 @@ This application will let you search for any pokemon by name or id from the poke
 
 ## Requirements
 
-Make sure you have Node.js installed
-Make sure you have the backend running
+Node.js installed
+
+Clone the backend and have it running:
+https://github.com/LucBens-Fritid/PokemAPI-Backend.git
 
 ## Installation
 
